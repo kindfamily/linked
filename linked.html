@@ -12,6 +12,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		
 		<style>
+			li{
+				list-style: none;
+			}
+			
+			
 			/* Popup container - can be anything you want */
 			.popup {
 				position: relative;
@@ -36,16 +41,18 @@
 				z-index: 1;
 				bottom: 125%;
 				left: 50%;
-				margin-left: -80px;
+				bottom: 20px;
+				margin-left: 0px;
 			}
 
 			/* Popup arrow */
 			.popup .popuptext::after {
 				content: "";
 				position: absolute;
-				top: 100%;
+				bottom: 100%;
 				left: 50%;
-				margin-left: -5px;
+				margin-left: -70px;
+				top: 35px;
 				border-width: 5px;
 				border-style: solid;
 				border-color: #555 transparent transparent transparent;
@@ -68,42 +75,32 @@
 				from {opacity: 0;}
 				to {opacity:1 ;}
 			}
-			</style>
-		
-		
-		
-		
-		
-		
-		
+			</style>	
 	</head>
 	<body>
 		<script>
 			window.onload = function(){
 				$(document).ready(function(){
-					var clipboard = new Clipboard('.btn');
+					var clipboard = new Clipboard('#popup');
 				});
 			};
 		</script>
-		
-
 		<h1>카카오스토리</h1>
 		<ul>
 			<li>
-				<a href="https://story.kakao.com/tuntungimpo" id="copy">https://story.kakao.com/tuntungimpo</a>
+				<a href="https://story.kakao.com/tuntungimpo" id="copy">[김포] https://story.kakao.com/tuntungimpo</a>
 				<a href="https://story.kakao.com/tuntungimpo">
 					<img src="./kakaostrorylogo.png" alt="">
 				</a>
-				<button class="btn" data-clipboard-target="#copy" onclick="myFunction()">
+				<div class="popup" onclick="myFunction()">
+					<span class="popuptext" id="myPopup"> copeid!</span>
+				</div>
+				<button id="popup" data-clipboard-target="#copy" onclick="myFunction()">
 					<img src="./clippy.svg" alt="Copy to clipboard" style="width:10px"> 
 				</button>
 			</li>
+			<li>전체보기</li>
 		</ul>
-		
-		<div class="popup" onclick="myFunction()">Click me to toggle the popup!
-		<span class="popuptext" id="myPopup"> copeid!</span>
-		</div>
-		
 		<script>
 			// When the user clicks on div, open the popup
 			function myFunction() {
@@ -115,11 +112,5 @@
 		
 		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		
-		
-		
-		
-		
-		
 	</body>
 </html>
