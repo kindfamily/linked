@@ -1,7 +1,10 @@
 <DOCTYPE! html>
-<html>
-	<head>
-		<meta charset="UTF-8">
+<html lang="ko">
+   <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatibel" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>linked</title>
 		<script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		
@@ -75,7 +78,17 @@
 				from {opacity: 0;}
 				to {opacity:1 ;}
 			}
-			</style>	
+		</style>	
+
+		<style>
+			body{
+				padding: 20px;
+			}
+
+			.col-md-12{
+				border-bottom: 1px solid gray;
+			}
+		</style>
 	</head>
 	<body>
 		<script>
@@ -85,22 +98,31 @@
 				});
 			};
 		</script>
-		<h1>카카오스토리</h1>
-		<ul>
-			<li>
-				[김포] <a href="https://story.kakao.com/tuntungimpo" id="copy">https://story.kakao.com/tuntungimpo</a>
-				<a href="https://story.kakao.com/tuntungimpo">
-					<img src="./kakaostrorylogo.png" alt="">
-				</a>
-				<div class="popup" onclick="myFunction()">
-					<span class="popuptext" id="myPopup"> copeid!</span>
-				</div>
-				<button id="popup" data-clipboard-target="#copy" onclick="myFunction()">
-					<img src="./clippy.svg" alt="Copy to clipboard" style="width:10px"> 
-				</button>
-			</li>
-			<li>전체보기</li>
-		</ul>
+		<div class="container">
+          <div class="row">
+          	<h1>카카오스토리</h1>
+          </div>
+           	<div class="row">
+           		<div class="col-md-12">
+					
+					<ul>
+						<li>
+							<a href="https://story.kakao.com/tuntungimpo" id="copy">https://story.kakao.com/tuntungimpo</a>
+							<a href="https://story.kakao.com/tuntungimpo">
+								<img src="./kakaostrorylogo.png" alt="">
+							</a>
+							<div class="popup" onclick="myFunction()">
+								<span class="popuptext" id="myPopup"> copeid!</span>
+							</div>
+							<button id="popup" data-clipboard-target="#copy" onclick="myFunction()">
+								<img src="./clippy.svg" alt="Copy to clipboard" style="width:10px"> 
+							</button>
+						</li>
+					</ul>
+          		</div>
+           </div>
+		
+	
 		<script>
 			// When the user clicks on div, open the popup
 			function myFunction() {
