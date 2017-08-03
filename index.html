@@ -13,6 +13,7 @@
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<style>
+		/*  css */
 			body{
 				padding: 20px;
 			}
@@ -21,6 +22,53 @@
 				border-bottom: 1px solid gray;
 			}
 	    </style>
+		<style>
+			#myInput {
+			background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+			background-position: 10px 12px; /* Position the search icon */
+			background-repeat: no-repeat; /* Do not repeat the icon image */
+			width: 100%; /* Full-width */
+			font-size: 16px; /* Increase font-size */
+			padding: 12px 20px 12px 40px; /* Add some padding */
+			border: 1px solid #ddd; /* Add a grey border */
+			margin-bottom: 12px; /* Add some space below the input */
+		}
+
+		#myUL {
+			/* Remove default list styling */
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#myUL li a {
+			border: 1px solid #ddd; /* Add a border to all links */
+			margin-top: -1px; /* Prevent double borders */
+			background-color: #f6f6f6; /* Grey background color */
+			padding: 12px; /* Add some padding */
+			text-decoration: none; /* Remove default text underline */
+			font-size: 18px; /* Increase the font-size */
+			color: black; /* Add a black text color */
+			display: block; /* Make it into a block element to fill the whole list */
+		}
+
+		#myUL li a.header {
+			background-color: #e2e2e2; /* Add a darker background color for headers */
+			cursor: default; /* Change cursor style */
+		}
+
+		#myUL li a:hover:not(.header) {
+			background-color: #eee; /* Add a hover effect to all links, except for headers */
+		}
+	</style>
+	<style>
+		/*	카카오스토리 링크 썸네일 이미지 수정 */
+		li img {
+			padding-left: 10px;
+		}
+	</style>
+		
+		
 		
 		
 	</head>
@@ -28,9 +76,49 @@
 	      <div class="container">
            <div class="row">
            		<div class="col-md-12">
-					<h1><a href="https://tuntunkimpo.github.io/linked/linked.html">카카오스토리<span class="badge">42</span></a></h1>
+					<h1><a href="https://tuntunkimpo.github.io/linked/linked.html">카카오스토리<span class="badge">9</span></a></h1>
           		</div>
            </div>
+           <div class="row">
+           		<div class="col=md-12">
+					<!-- 검색표 -->
+           			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+					<ul id="myUL">
+				      <li><a href="https://story.kakao.com/ch/tuntun">【추천】튼튼영어<img src="./kakaostrorylogo.png" alt=""></a>*교재소개,이벤트,교육정보 얻을수 있는 튼튼영어 대표 카카오스토리</li>	
+		            	<li><a href="https://story.kakao.com/tuntungimpo" class="header">김포<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/tuntunmapo" class="header">마포성산<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/go1woo" class="header">대전유성<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/_4S0Mu6" class="header">안양만안<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/sharksjh" class="header">대구성서<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/_hB5g56" class="header">서초방배<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/tuntun0582" class="header">울산삼산<img src="./kakaostrorylogo.png" alt=""></a></li>
+					  <li><a href="https://story.kakao.com/tuntun001" class="header">전주<img src="./kakaostrorylogo.png" alt=""></a></li>
+             		</ul>
+           		</div>
+           </div>
+           <script>
+			// 검색 폼 자바스크립트
+			function myFunction() {
+				// Declare variables
+				var input, filter, ul, li, a, i;
+				input = document.getElementById('myInput');
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				li = ul.getElementsByTagName('li');
+
+				// Loop through all list items, and hide those who don't match the search query
+				for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+			</script>
+           
 			<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</body>
