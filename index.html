@@ -23,6 +23,7 @@
 			}
 	    </style>
 		<style>
+/*	검색 디자인*/
 			#myInput {
 			background-image: url('/css/searchicon.png'); /* Add a search icon to input */
 			background-position: 10px 12px; /* Position the search icon */
@@ -44,7 +45,7 @@
 		#myUL li a {
 			border: 1px solid #ddd; /* Add a border to all links */
 			margin-top: -1px; /* Prevent double borders */
-			background-color: #f6f6f6; /* Grey background color */
+			background-color: #e1f08e; /* Grey background color 일반리스트 평소 색깔*/
 			padding: 12px; /* Add some padding */
 			text-decoration: none; /* Remove default text underline */
 			font-size: 18px; /* Increase the font-size */
@@ -68,6 +69,47 @@
 		}
 		
 	</style>
+	<style>
+/* 툴팁 스타일 */
+		.tooltip {
+		position: relative;
+		display: inline-block;
+		border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 120px;
+		background-color: #555;
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px 0;
+		position: absolute;
+		z-index: 1;
+		bottom: 125%;
+		left: 50%;
+		margin-left: -60px;
+		opacity: 0;
+		transition: opacity 1s;
+	}
+
+	.tooltip .tooltiptext::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #555 transparent transparent transparent;
+	}
+
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+	</style>
 		
 		
 		
@@ -85,8 +127,11 @@
 					<!-- 검색표 -->
            			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
+					<!-- todo: li a 안에 데이터 변경해서 javascript로 뿌려주는 틀 만들기 유다시티 폼 -->
 					<ul id="myUL">
-				      <li><a href="https://story.kakao.com/ch/tuntun">【추천】튼튼영어<img src="./kakaostrorylogo.png" alt=""></a>*교재소개,이벤트,교육정보 얻을수 있는 튼튼영어 대표 카카오스토리</li>	
+				     <li><a href="https://story.kakao.com/ch/tuntun"><h4>【추천카카오스토리】튼튼영어<img src="./kakaostrorylogo.png" alt=""></h4>이벤트,교재,교육정보 얻을수 있는 튼튼영어 대표 카카오스토리</a>
+	            	
+	            	</li>	
 		            	<li><a href="https://story.kakao.com/tuntungimpo" class="header">김포<img src="./kakaostrorylogo.png" alt=""></a></li>
 					  <li><a href="https://story.kakao.com/tuntunmapo" class="header">마포성산<img src="./kakaostrorylogo.png" alt=""></a></li>
 					  <li><a href="https://story.kakao.com/go1woo" class="header">대전유성<img src="./kakaostrorylogo.png" alt=""></a></li>
