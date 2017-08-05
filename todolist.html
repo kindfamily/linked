@@ -167,6 +167,7 @@ var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
+	// checked 된 리스트는 하루동안 cheked 유지 하는 코드 추가
   }
 }, false);
 
