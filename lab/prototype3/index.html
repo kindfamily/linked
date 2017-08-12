@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
    <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatibel" content="IE-edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>linked</title>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatibel" content="IE-edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       		<title>linked</title>
 		<!-- Jquery CDN	-->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
@@ -24,16 +24,21 @@
 		<script src="./js/helper.js"></script>
 		
 		<!-- 진동이미지 jquery ui 라이브러리 -->
-	    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	</head>
-	<body>
-	     <div class="container">
-           <div class="row">
-           		<div id="header" class="col-md-12">
+	  	<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+	  	<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	 	<script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+<!--
+			<div class="row">
+				<div id="header" class="col-md-12">
 					<h1>카카오스토리<span class="badge">14</span></h1>
-          		</div>
+				</div>
+			</div>    
+-->
+           <div class="row">
+               <div id="header" class="col-md-12"></div>
            </div>
            <div class="row">
            		<div class="col=md-12">
@@ -58,39 +63,12 @@
 					</ul>
            		</div>
            </div>
-		</div>
-          <div id="toggle"></div>
-           <script>
-			   
-			// 검색 폼 자바스크립트
-			function myFunction() {
-				// Declare variables
-				var input, filter, ul, li, a, i;
-				input = document.getElementById('myInput');
-				filter = input.value.toUpperCase();
-				ul = document.getElementById("myUL");
-				li = ul.getElementsByTagName('li');
-
-				// Loop through all list items, and hide those who don't match the search query
-				for (i = 0; i < li.length; i++) {
-					a = li[i].getElementsByTagName("a")[0];
-					if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-						li[i].style.display = "";
-					} else {
-						li[i].style.display = "none";
-					}
-				}
-			}
-			</script>
-          
-			<script>
-			$( document ).ready(function() {
-			$( ".toggle" ).delay(600).effect( "shake" );
-			});
-			</script>
-          
            
-			<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	</body>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="js/app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  </body>
 </html>
