@@ -28,52 +28,66 @@
 
 (function (window) {
 	'use strict';
-//
-//	
-//<div class="row">
-//	<div id="header" class="col-md-12">
-//		<h1>카카오스토리<span class="badge">14</span></h1>
-//	</div>
-//</div>
-//	
-	
-	
-	// Your starting point. Enjoy the ride!
+/* 헤더부분 */
     var user = {
         "number": "14",
         "subName": "bill",
     };
 	
+/* li 반복적으로 뿌려주는 부분 */	
+var quz = {
+    "questions": [
+        { 
+            "booksImg" : "김포",
+            "description" : "https://story.kakao.com/tuntungimpo" 
+        },
+        { 
+            "booksImg" : "마포성산",
+            "description" : "https://story.kakao.com/tuntunmapo" 
+        },
+        { 
+            "booksImg" : "마포성산",
+            "description" : "https://story.kakao.com/tuntunmapo" 
+        },
+        { 
+            "booksImg" : "마포성산",
+            "description" : "https://story.kakao.com/tuntunmapo" 
+        },
+        { 
+            "booksImg" : "강서마곡",
+            "description" : "https://story.kakao.com/ch/tuntunmagok" 
+        }
+    ]
+};
+
 var projects = {};
 projects.headerfooter = function(){
         var HTMLheaderName = '<h1>카카오스토리<span class="badge">%data%</span></h1>';
-        var HTMLheaderSubName = '<h2 id="subname" class="supertitle text-uppercase">%data%</h2>';
     
         // var forMattedName = HTMLheaderName.replace("%data%", edu.school[0].name);
-        var forMattedName = HTMLheaderName.replace("%data%", user.number);
-        var forMattedSubName = HTMLheaderSubName.replace("%data%", user.subName);
+        var forMattedName = HTMLheaderName.replace("%data%", quz.questions.length);
     
         $('#header').append(forMattedName);
-        $('#header').append(forMattedSubName);
-    };
+	};
 projects.headerfooter();
 
-    var link = {
-        "number": "14",
-        "subName": "bill",
-    };
+
+
+projects.question = function () {
+        var qu = 0;
+        for (qu in quz.questions){
+        $('#book').append('<ul class="col-md-4"></ul>');
+            
+        var HTMLQImg = '<li class="list">%data%</li>';
+        var forMattedQImg = HTMLQImg.replace("%data%", quz.questions[qu].booksImg);
+        $('.col-md-4:last').append(forMattedQImg);
+			
+        var HTMLQDescription = '<a src="%data%"><img src="./img/kakaostrorylogo.png" alt=""></a>'; 
+        var forMattedQDescription = HTMLQDescription.replace("%data%", quz.questions[qu].description); 
+        $('.list:last').append(forMattedQDescription);    
+        };
+};
+    
+projects.question();
 	
-var projects = {};
-projects.headerfooter = function(){
-        var HTMLheaderName = '<h1>카카오스토리<span class="badge">%data%</span></h1>';
-        var HTMLheaderSubName = '<h2 id="subname" class="supertitle text-uppercase">%data%</h2>';
-    
-        // var forMattedName = HTMLheaderName.replace("%data%", edu.school[0].name);
-        var forMattedName = HTMLheaderName.replace("%data%", user.number);
-        var forMattedSubName = HTMLheaderSubName.replace("%data%", user.subName);
-    
-        $('#header').append(forMattedName);
-        $('#header').append(forMattedSubName);
-    };
-projects.headerfooter();
 })(window);
