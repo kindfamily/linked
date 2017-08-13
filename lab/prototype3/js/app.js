@@ -65,7 +65,7 @@ projects.headerfooter = function(){
         var HTMLheaderName = '<h1>카카오스토리<span class="badge">%data%</span></h1>';
     
         // var forMattedName = HTMLheaderName.replace("%data%", edu.school[0].name);
-        var forMattedName = HTMLheaderName.replace("%data%", quz.questions.length);
+        var forMattedName = HTMLheaderName.replace("%data%", quz.questions.length + 2);
     
         $('#header').append(forMattedName);
 	};
