@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatibel" content="IE-edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>linked</title>		
+		<!-- jquery mobile -->
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		
 		<!-- Jquery CDN	-->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -28,6 +30,9 @@
 	    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
 		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		
+		<!-- jquery mobile -->
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		
 		<style>
          /* 슬라이드쇼 스타일*/
@@ -105,12 +110,11 @@
 	<body>
 	     <div class="container">
            <div class="row">
-           		<div id="header" class="col-md-12">
+           		<div id="header" class="col-md-12" style="border-bottom: 1px solid gray;">
 					<h1>카카오스토리<span class="badge">14</span></h1>
           		</div>
            </div>
-           <div class="row container" style="
-    margin-top:5px;">
+           <div class="row container" style=" margin-top:5px;">
                
                
            <!-- 슬라이드쇼 부트스트랩    -->
@@ -166,13 +170,13 @@
           </div>
 
           		
-          		
+          		class="ui-content"
           		
            </div>
            <div class="row">
            		<div class="col=md-12">
 					<!-- 검색표 -->
-           			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+           			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."><a href="#"></a>
 					<!-- todo: li a 안에 데이터 변경해서 javascript로 뿌려주는 틀 만들기 유다시티 폼 -->
 					<ul id="myUL">
 						<li class="toggle"><a href="https://story.kakao.com/ch/tuntun"><h4>【추천카카오스토리】<img src="./img/kakaostrorylogo.png" alt=""></h4>이벤트,교재,교육정보 얻을수 있는 튼튼영어 공식 카카오스토리</a></li>
