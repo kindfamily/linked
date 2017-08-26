@@ -36,10 +36,11 @@
             background: #dfe2e5;
             
         }
+*/
         .input_dl dt input::placeholder {
             color: black !important;
         }
-*/
+
         .input_dl dt select {
             background: #dfe2e5;
             color: black;
@@ -56,6 +57,12 @@
         dl{
             padding: 20px;
             color: black;
+            margin-top: 10px;
+            border-radius: 25px;
+            background: #dfe2e5;
+        }
+        dt{
+            width: 100%;
         }
         .input_dl dt h4{
             color: black;
@@ -70,7 +77,7 @@
 							<p>Enter simple information <a href="https://templated.co">BLOG</a></p>
 							<h2>간단정보입력</h2>
 							
-							<dl class="input_dl" style="background: #dfe2e5";>
+							<dl class="input_dl">
                                 <dt class="6u 12u$(xsmall)">
                                     <h4>결혼여부</h4>
                                     <div class="4u 12u$(small)">
@@ -81,72 +88,86 @@
                                         <input type="radio" id="priority-normal" name="priority">
                                         <label for="priority-normal">미혼</label>
                                     </div>
-                                    
                                 </dt>
-                                <dt class="6u$ 12u$(xsmall)">
-                                    <h4>자녀수</h4>
-                                    <input type="email" class="maininput" name="email" id="email" value="" placeholder="자녀수" />
+                                <dt class="6u$ 12u$(xsmall) select-wrapper">
+                                    <h4>자녀</h4>
+                                    <select>
+                                        <option value="">-- 자녀 --</option>
+                                        <option value="1">1자녀</option>
+                                        <option value="1">2자녀</option>
+                                        <option value="1">3자녀</option>
+                                        <option value="1">4자녀이상</option>
+                                    </select>
                                 </dt>
-                                <dt class="6u$ 12u$(xsmall) select-wrapper" style="float: left">
+                                <dt class="6u$ 12u$(xsmall) select-wrapper">
                                     <h4>업종</h4>
                                     <select>
-                                        <option value="">---- 1차분류 ----</option>
+                                        <option value="">-- 1차분류 --</option>
                                         <option value="1">Manufacturing</option>
                                         <option value="1">Shipping</option>
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
                                     <select>
-                                        <option value="">---- 2차분류 ----</option>
+                                        <option value="">-- 2차분류 --</option>
                                         <option value="1">Manufacturing</option>
                                         <option value="1">Shipping</option>
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
                                 </dt>
-                                <dt class="6u$ 12u$(xsmall) select-wrapper" style="float: left">  
+                                <dt class="6u$ 12u$(xsmall) select-wrapper">  
                                    <h4>지역</h4>
                                    <select>
-                                        <option value="">---- 시 ----</option>
+                                        <option value="">-- 시 --</option>
                                         <option value="1">Manufacturing</option>
                                         <option value="1">Shipping</option>
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
                                     <select>
-                                        <option value="">---- 구 ----</option>
+                                        <option value="">-- 구 --</option>
                                         <option value="1">Manufacturing</option>
                                         <option value="1">Shipping</option>
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
                                     <select>
-                                        <option value="">---- 동 ----</option>
+                                        <option value="">-- 동 --</option>
                                         <option value="1">Manufacturing</option>
                                         <option value="1">Shipping</option>
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
                                 </dt>
-                                <dt class="6u$ 12u$(xsmall)">
-                                    <h4>나이</h4>
-                                    <input type="email" class="maininput" name="email" id="email" value="" placeholder="나이" />
+                                <dt class="6u$ 12u$(xsmall) select-wrapper">
+                                   <h4>나이</h4>
+                                   <select>
+                                        <option value="">-- 20대 --</option>
+                                        <option value="1">30대</option>
+                                        <option value="1">40대</option>
+                                        <option value="1">50대이상</option>
+                                    </select>
                                 </dt>
                                 <dt class="6u$ 12u$(xsmall)">
                                     <h4>성별</h4>
                                     <div class="4u 12u$(small)">
-                                        <input type="radio" id="priority-low" name="priority" checked>
-                                        <label for="priority-low">남</label>
+                                        <input type="radio" id="priority-low3" name="priority3" checked>
+                                        <label for="priority-low3">남</label>
                                     </div>
                                     <div class="4u 12u$(small)">
-                                        <input type="radio" id="priority-normal" name="priority">
-                                        <label for="priority-normal">여</label>
+                                        <input type="radio" id="priority-normal2" name="priority3">
+                                        <label for="priority-normal3">여</label>
                                     </div>
-                                </dt>  
+                                </dt>
+                                <dt>
+                                    <footer id="foo" class="align-center">
+                                        <a href="generic.html" id="foo" class="button alt" style="background: #77a4d0;">자세히보기</a>
+                                    </footer>  
+                                    
+                                </dt>
                             </dl>
-                            <footer id="foo" class="align-center">
-                                <a href="generic.html" id="foo" class="button alt" style="background: #77a4d0;">자세히보기</a>
-                            </footer>
+                            
 						                         
 						</header>
 					</div>
