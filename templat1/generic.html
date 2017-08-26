@@ -6,16 +6,33 @@
 -->
 <html>
 	<head>
-		<title>Hielo by TEMPLATED</title>
+		<title>보험클로젯</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="./db/list.js"></script>
+		<script src="./db/data_1.js"></script>
+		<script src="./db/data_2.js"></script>
+		<script src="./db/data_3.js"></script>
+		<style>
+			tspan {
+				font-weight: bold;
+			}
+			#data_grid tbody {
+				color: black;
+			}
+			#recommendation tbody {
+				color: black;
+			}
+		</style>
 	</head>
 	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="index.html">보험클로젯</a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
@@ -24,7 +41,6 @@
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
 
@@ -32,8 +48,8 @@
 			<section id="One" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
-						<p>Eleifend vitae urna</p>
-						<h2>Generic Page Template</h2>
+						<p>inquiry of my insurarance information</p>
+						<h2>나의 보험정보 조회</h2>
 					</header>
 				</div>
 			</section>
@@ -43,15 +59,49 @@
 				<div class="inner">
 					<div class="box">
 						<div class="content">
+						<!-- 
 							<header class="align-center">
 								<p>maecenas sapien feugiat ex purus</p>
 								<h2>Lorem ipsum dolor</h2>
 							</header>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at dignissim augue, in iaculis neque. Etiam bibendum felis ac vulputate pellentesque. Cras non blandit quam. Nunc porta, est non posuere sagittis, neque nunc pellentesque diam, a iaculis lacus urna vitae purus. In non dui vel est tempor faucibus. Aliquam erat volutpat. Quisque vel est vitae nibh laoreet auctor. In nec libero dui. Nulla ullamcorper, dolor nec accumsan viverra, libero eros rutrum metus, vel lacinia magna odio non nunc. Praesent semper felis eu rhoncus aliquam. Donec at quam ac libero vestibulum pretium. Nunc faucibus vel arcu in malesuada. Aenean at velit odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas commodo erat eget molestie sollicitudin. Donec imperdiet, ex sed blandit dictum, ipsum metus ultrices arcu, vitae euismod nisl sapien vitae tortor.</p>
+						-->
 
-							<p>Vivamus nec odio ac ligula congue feugiat at vitae leo. Aenean sem justo, finibus sed dui eu, accumsan facilisis dolor. Fusce quis dui eget odio iaculis aliquam vel sed velit. Nulla pellentesque posuere semper. Nulla eu sagittis lorem, a auctor nulla. Sed ac condimentum orci, ac varius ante. Nunc blandit quam sit amet sollicitudin sodales.</p>
-
-							<p>Vivamus ultricies mollis mauris quis molestie. Quisque eu mi velit. In et cursus nibh. Donec facilisis, orci sed mollis hendrerit, nunc risus mattis odio, eget efficitur nisl orci a lectus. Aenean finibus neque convallis orci sollicitudin tincidunt. Vivamus lacinia facilisis diam, quis facilisis nisi luctus nec. Aliquam ac molestie enim, ut ultrices elit. Fusce laoreet vulputate risus in tincidunt. Sed commodo mollis maximus. Nullam varius laoreet nibh sit amet facilisis. Donec ac odio vehicula, consequat elit et, sodales justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ac auctor mauris, in hendrerit libero. </p>
+							<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+							<br/><br/><br/>
+							<header class="align-center" id="data_grid_header">
+							</header>
+							
+							<div id="data_grid">
+								<table>
+									<thead>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+							
+							
+							
+							<div id="recommendation" style="display: none;">
+								<br/><br/><br/>
+								<header class="align-center">
+									<p>RECOMMENDED insurance</p>
+									<h2>추천 보험</h2>
+								</header>
+								<table>
+									<thead>
+										<tr>	<th>추천 보험</th><th>추천 보험사</th>	</tr>
+									</thead>
+									<tbody>
+										<tr>	<td rowspan="3">사망자금</td>	<td>동양생명 하늘애 정기보험</td>	</tr>
+										<tr>								<td>알리안츠 트튼가장 든든보험</td>	</tr>
+										<tr>								<td>흥국생명 꼭한번정기보험</td>	</tr>
+										<tr>	<td rowspan="3">상해보험</td>	<td>삼성생명 누구나 상해보험</td>	</tr>
+										<tr>								<td>신한생명 명풍상해보험</td>		</tr>
+										<tr>								<td>DGB생명 가족 사랑 정기보험</td>	</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,5 +129,98 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+
+		<script>
+			Highcharts.chart('container', {
+			    chart: {
+			        type: 'bar',
+			    },
+			    title: {
+			        text: '나(미혼, 프로그래머, 서울, 30대)의 보험가입정보와 표준정보 비교'
+			    },
+			    subtitle: {
+			        text: '표준정보는 한국보험데이터 정보입니다.'
+			    },
+			    xAxis: {
+			        categories: ['kb손해 생명보험', '라이나 치아보험', '한화 암보험'],
+			        title: {
+			            text: null
+			        }
+			    },
+			    yAxis: {
+			        min: 0,
+			        title: {
+			            text: '금액 (원)',
+			            align: 'high'
+			        },
+			        labels: {
+			            overflow: 'justify'
+			        }
+			    },
+			    tooltip: {
+			        valueSuffix: ' 원'
+			    },
+			    plotOptions: {
+			        bar: {
+			            dataLabels: {
+			                enabled: true
+			            }
+			        },
+			        series: {
+			            cursor: 'pointer',
+			            events: {
+			            	click: function (event) {
+			            		
+			            		var data_grid = document.getElementById('data_grid');
+			            		var tbody = data_grid.querySelector('table tbody');
+			            		
+			            		var nb = (Math.floor(Math.random() * 10) % 3 + 1);
+			            		
+			            		var get_data;
+			            		var title;
+			            		
+			            		if(nb == 1)			{	get_data = data_1;	title = 'kb손해 생명보험';}
+			            		else if(nb == 2)	{	get_data = data_2;	title = '라이나 치아보험험';}
+			            		else 				{	get_data = data_3;	title = '한화 암보험';}
+			            		
+			            		
+            					document.getElementById('data_grid_header').innerHTML = '	<p>가입금액 비교하기</p><h2>'+ title +'</h2>';
+            					
+            					
+			            		var html = '';
+			            		for(var i = 0; i < get_data.length; i++){
+			            			var data = get_data[i];
+			            			
+			            			html += '<tr>';
+			            			html += '	<td>'+ data.insurance_coverage +'</td>';
+			            			html += '	<td>'+ data.my_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +'</td>';
+			            			html += '	<td>'+ data.standard_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +'</td>';
+			            			html += '</tr>';
+			            		}
+			            		data_grid.querySelector('table thead').innerHTML = '<tr><th>보장내용</th><th>나의 가입금액</th><th>표준 가입금액</th></tr>';
+			            		tbody.innerHTML = html;
+			            		
+			            		document.getElementById('recommendation').style.display = 'block';
+			                }
+			            }
+			        }
+			    },
+			    legend: {
+			        layout: 'vertical',
+			        align: 'right',
+			        verticalAlign: 'top',
+			        x: 0,
+			        y: 40,
+			        floating: true,
+			        borderWidth: 1,
+			        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+			        shadow: true
+			    },
+			    credits: {
+			        enabled: false
+			    },
+			    series: my_list
+			});
+		</script>
 	</body>
 </html>
