@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/district.js"></script>
+    <script src="./db/job.js"></script>
 </head>
 
 <body>
@@ -156,19 +157,11 @@
                         </dt>
                         <dt class="6u$ 12u$(xsmall) select-wrapper">
                             <h4>업종</h4>
-                            <select>
+                            <select class="job-one">
                                 <option value="">-- 1차분류 --</option>
-                                <option value="1">Manufacturing</option>
-                                <option value="1">Shipping</option>
-                                <option value="1">Administration</option>
-                                <option value="1">Human Resources</option>
                             </select>
-                            <select>
+                            <select class="job-two">
                                 <option value="">-- 2차분류 --</option>
-                                <option value="1">Manufacturing</option>
-                                <option value="1">Shipping</option>
-                                <option value="1">Administration</option>
-                                <option value="1">Human Resources</option>
                             </select>
                         </dt>
                         <dt class="6u$ 12u$(xsmall) select-wrapper">
@@ -312,6 +305,12 @@
     <script>
     var selected_city = "";
     var selected_gu = "";
+    var selected_job = "";
+
+    for (j in job) {
+        var html = "<option>" + j + "</option>"
+        $('.job-one').append(html);
+    }
 
     for (city in district) {
         var html = "<option>" + city + "</option>"
@@ -332,18 +331,20 @@
         selected_gu = $('#district_gu').val();
         var dong_s = district[selected_city][selected_gu];
 
-        for (i in dong_s) {
+        for (var i in dong_s) {
             var html = "<option>" + dong_s[i] + "</option>"
             $('#district_dong').append(html);
         }
     });
 
-    $('.radio-married').click(function() {
-        $('.select-child').removeAttr('disabled');
-    });
+    $('.job-one').change(function() {
+        var j = $('.job-one').val();
+        var selected_job = $('.job-one').val();
 
-    $('.radio-single').click(function() {
-        $('.select-child').attr('disabled', 'true');
+        for(var i in j) {
+            var html = "<option>" + job[selected_job][i] + "</option>"
+            $('.job-two').append(html);
+        }
     });
     </script>
 </body>
