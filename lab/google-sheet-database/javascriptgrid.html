@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt-1.10.15/jqc-1.12.4,dt-1.10.15,b-1.4.0,se-1.2.2/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="Editor-1.6.4/css/editor.dataTables.css">
+  
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt-1.10.15/jqc-1.12.4,dt-1.10.15,b-1.4.0,se-1.2.2/datatables.min.js"></script>
+<script type="text/javascript" src="Editor-1.6.4/js/dataTables.editor.js"></script>
+<body>
+    <div class="myTable"></div>
+    
+    
+    
+    
+    <script>
+    $('#myTable').DataTable( {
+    ajax: '/api/staff',
+    dom: 'Bfrtip',
+    columns: [
+        { data: 'first_name' },
+        { data: 'last_name' },
+        // etc
+    ],
+    select: true,
+    buttons: [
+        { extend: 'create', editor: editor },
+        { extend: 'edit',   editor: editor },
+        { extend: 'remove', editor: editor }
+    ]
+} );
+    </script>
+    
+</body>
+
+
