@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("body").keydown(function(event){ 
-        $("div").html("Key: " + event.which);
-        
-        /* 만약 event.which 값이 숫자 1 이라면 실행되어라 */
-        
-            var HTMLheaderName = '<h1 id="name" class="supertitle text-uppercase"><strong>%data%</strong></h1>';
-            
-            for (counter = 0; counter < 5; counter++ ){
-                var forMattedName = HTMLheaderName.replace("%data%", counter);
-
-                $('#counter').append(forMattedName);
-            }
-        
-        /* 아니라면 아무것도 0이라는 기본 숫자만 입력 해라 */
-
-    });
-});
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
-Enter your name: <input type="text" id="keynum">
+   
+<div id="likes">
+    <span class="figure"></span>
+</div>
 
-counter: <h1 id="counter"></h1>
-
-<div />
-
+<script type="text/javascript">
+    var clicks = 0; 
+    
+    $("body").keydown(function(){ 
+        clicks++; 
+        $('.figure').html(clicks);
+    });
+</script>
 
 </body>
 </html>
