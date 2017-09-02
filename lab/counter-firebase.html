@@ -9,29 +9,29 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-
+    <style>
+        #likes{
+             font-size: 30px;
+             border: 1px solid black;
+             text-align: center;
+             display:table-cell;
+             vertical-align:middle;
+             width:200px;
+             height:200px;
+             border-radius:100px;
+             -moz-border-radius : 100px;
+             -webkit-border-radius : 100px;
+             -ms-border-radius :100px;
+             -khtml-border-radius : 100px;
+             -o-border-radius :100px;
+        }
+    </style>
 
 </head>
 <body>
-<!-- firebase 입출력 예제 -->
-<!--
-   <div class="cardBox">
-    <h1>name: <input id="inputname" type="text"></h1>
-    <h1>subname: <input id="inputsubname" type="text"></h1>
-    <button id="button" type="submit">Submit</button>
-    <h1>showname: <h1 id="showname"></h1></h1>
-    <h1>showsubname: <h1 id="showsubname"></h1></h1>
-
-    <h1 id="display"></h1>
-</div>
--->
-
-
    
     <!-- 키눌렀을떄 +1 숫자 보여주는 디스플레이 -->   
-    <div id="likes">
-        <span class="figure"></span>
-    </div>
+        <div id="likes" class="figure"></div>
     <script>
     var config = {
         apiKey: "AIzaSyA9N7yJF_SSuA5KjqsmefM3XmQJL4obVOg",
@@ -52,14 +52,19 @@
           /* value 값을 snap.val()으로 불러와서 clicks에 담는다 */
           var clicks = snap.val();
           /* 버튼을 눌렀을때 clicks에 1을 더하고 databse에 저장한다 */
-          $("body").keydown(function(){ 
+          $("body").keydown(function(event){ 
+            var keynum = event.which;
+            
+            console.log(keynum);
+            /* 49 숫자1 이면 1증가 */
+            if(keynum === 49){
+                clicks++; 
+                $('.figure').html(clicks);
 
-            clicks++; 
-            $('.figure').html(clicks);
-
-            database.ref().set({
-            name: clicks
-            });
+                database.ref().set({
+                name: clicks
+                });                
+            };
         });
                     
     });
