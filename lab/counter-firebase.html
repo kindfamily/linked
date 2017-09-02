@@ -47,7 +47,7 @@
       var database = firebase.database();
 
       /* key 값이 name인 값의 전체를 불러온다 */  
-      const clicksDatabses = firebase.database().ref().child('name');
+      const clicksDatabses = firebase.database().ref().child('num1');
       clicksDatabses.once('value', snap => {
           /* value 값을 snap.val()으로 불러와서 clicks에 담는다 */
           var clicks = snap.val();
@@ -62,7 +62,7 @@
                 $('.figure').html(clicks);
 
                 database.ref().set({
-                name: clicks
+                num1: clicks
                 });                
             };
         });
